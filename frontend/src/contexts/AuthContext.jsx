@@ -6,7 +6,7 @@ import  server   from "../environment"
 export const AuthContext = createContext({});
 
 const client = axios.create({
-    baseURL: `${server}/api/v1/users `// Added protocol here
+    baseURL: `${server}/api/v1/users`// Added protocol here
 });
 
 export const AuthProvider = ({ children }) => { // Fixed typo here
