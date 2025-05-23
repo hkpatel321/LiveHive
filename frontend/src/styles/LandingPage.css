@@ -1,0 +1,123 @@
+.landingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navHeader h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  background: linear-gradient(to right, #FF9839, #FF5733);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform 0.3s ease;
+}
+
+.navHeader h2:hover {
+  transform: scale(1.05);
+}
+
+.navlist {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navlist p {
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navlist p:hover {
+  color: #FF9839;
+}
+
+.navlist p::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #FF9839;
+  transition: width 0.3s ease;
+}
+
+.navlist p:hover::after {
+  width: 100%;
+}
+
+.landingMainContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 6rem;
+  height: calc(100vh - 100px);
+  align-items: center;
+}
+
+.landingMainContainer h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease;
+}
+
+.landingMainContainer p {
+  font-size: 1.5rem;
+  color: #cccccc;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease 0.2s;
+}
+
+.landingMainContainer div[role='button'] {
+  background: linear-gradient(45deg, #FF9839, #FF5733);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+  animation: fadeInUp 1s ease 0.4s;
+  box-shadow: 0 4px 15px rgba(255, 152, 57, 0.3);
+}
+
+.landingMainContainer div[role='button']:hover {
+  transform: translateY(-5px);
+}
+
+.landingMainContainer div[role='button'] a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.landingMainContainer > div:nth-child(2) img {
+  height: 70vh;
+  width: auto;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 15px rgba(255, 152, 57, 0.3));
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

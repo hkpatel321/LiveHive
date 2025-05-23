@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react'
 import io from "socket.io-client";
 import { Badge, IconButton, TextField } from '@mui/material';
@@ -452,16 +451,16 @@ export default function VideoMeet() {
 
             {askForUsername === true ?
 
-                <div>
+                <div className="lobby-container">
 
 
-                    <h2>Enter into Lobby </h2>
-                    <TextField id="outlined-basic" label="Username" value={username} onChange={e => setUsername(e.target.value)} variant="outlined" />
-                    <Button variant="contained" onClick={connect}>Connect</Button>
+                    <h2>Enter into Lobby</h2>
+                    <TextField id="outlined-basic" label="Username" value={username} onChange={e => setUsername(e.target.value)} variant="outlined" className="lobby-input" />
+                    <Button variant="contained" onClick={connect} className="lobby-button">Connect</Button>
 
 
                     <div>
-                        <video ref={localVideoref} autoPlay muted></video>
+                        <video ref={localVideoref} autoPlay muted className="lobby-video"></video>
                     </div>
 
                 </div> :

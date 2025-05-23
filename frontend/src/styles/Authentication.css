@@ -1,0 +1,110 @@
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2rem;
+}
+
+.auth-box {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  animation: slideIn 0.5s ease;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+  color: #333;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group .MuiTextField-root {
+  width: 100%;
+}
+
+.form-group .MuiInputLabel-root {
+  color: #666;
+}
+
+.form-group .MuiOutlinedInput-root {
+  border-radius: 10px;
+}
+
+.form-group .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #FF9839;
+}
+
+.auth-button {
+  background: linear-gradient(45deg, #FF9839, #FF5733) !important;
+  color: white !important;
+  padding: 12px !important;
+  border-radius: 10px !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  transition: transform 0.3s ease !important;
+  margin-top: 1rem !important;
+}
+
+.auth-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 152, 57, 0.3) !important;
+}
+
+.switch-form {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #666;
+}
+
+.switch-form button {
+  color: #FF9839 !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+.error-message {
+  color: #f44336;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  color: #4caf50;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

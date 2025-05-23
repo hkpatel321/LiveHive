@@ -6,12 +6,28 @@ import cors from "cors";
 import { error } from "node:console";
 import userRoutes from "./routes/users.routes.js"
 import {connectToSocket} from "./controllers/socket.manager.js"
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+if (!process.env.MONGOURL) {
+  console.error("MONGOURL is not defined in the .env file");
+  process.exit(1);
+}
+
+console.log("Connecting to MongoDB with URL:", process.env.MONGOURL);
+
+mongoose.connect(process.env.MONGOURL, { useNewUrlParser: true})
+  .then(() => console.log("DB connected"))
+  .catch((err) => {
+    console.error("Error connecting to MongoDB:", err);
+    process.exit(1);
+  });
 
 const app = express();
 const port = 8000;
 const server = createServer(app);
 const io = connectToSocket(server);
-mongoose.connect("mongodb+srv://phet30440:a25hN6GOWi8DY9qt@livehive.0hnkm.mongodb.net/?retryWrites=true&w=majority&appName=LiveHive").then(()=>console.log("DB connected")).catch((err)=>console.log(err));
 
 app.use(cors());  
 

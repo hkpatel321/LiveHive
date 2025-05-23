@@ -6,10 +6,10 @@ import  server   from "../environment"
 export const AuthContext = createContext({});
 
 const client = axios.create({
-    baseURL: `${server}/api/v1/users`// Added protocol here
+    baseURL: `${server}/api/v1/users`
 });
 
-export const AuthProvider = ({ children }) => { // Fixed typo here
+export const AuthProvider = ({ children }) => {
     const authContext = useContext(AuthContext);
     const [userData, setUserData] = useState(authContext);
 
@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => { // Fixed typo here
             });
             if (request.status === httpStatus.OK) {
                 localStorage.setItem("token", request.data.token);
-                router("/home"); // Navigate to dashboard on successful login
+                router("/home"); 
             }
         } catch (err) {
             console.error('Error during login:', err);
@@ -71,7 +71,7 @@ export const AuthProvider = ({ children }) => { // Fixed typo here
         }
     }
 
-    const router = useNavigate(); // Added router usage
+    const router = useNavigate(); 
     const data = {
         userData,
         setUserData,
